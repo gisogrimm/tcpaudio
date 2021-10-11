@@ -14,7 +14,7 @@ struct audiobuffer_t audiobuffer_allocate(uint32_t frames, uint32_t channels,
   size_t size = ret.frames * ret.channels;
   if(!size)
     size = 1;
-  ret.data = malloc(size * sizeof(int16_t));
+  ret.data = (int16_t*)malloc(size * sizeof(int16_t));
   return ret;
 }
 
